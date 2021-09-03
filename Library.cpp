@@ -74,6 +74,7 @@ void Library::organizeBooksByGenre() {
         else {
             std::vector<Book*> bookList = it->second;
             bookList.push_back(book);
+            it->second = bookList; //This line was not included before which is essential to show all data
         }
     }
 }

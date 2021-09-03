@@ -60,17 +60,17 @@ Book* BookCreator::createBook() {
                 }
                 book->setGenre(info.getInfo());
             }
-            else if (check(info, Info::HOURS)) {
-                if (book->hasHours()) {
+            else if (check(info, Info::PAGES)) { // The pages and hours functions were mixed up
+                if (book->hasPages()) {
                     throw "Hours can not be set twice for the same book.";
                 }
                 book->setPages(info.getInfo());
             }
-            else if (check(info, Info::PAGES)) {
-                if (book->hasPages()) {
+            else if (check(info, Info::HOURS)) { // The pages and hours functions were mixed up
+                if (book->hasHours()) {
                     throw "Pages can not be set twice for the same book.";
                 }
-                book->setPages(info.getInfo());
+                book->setHours(info.getInfo());
             }
         }
         currLineIdx++;
